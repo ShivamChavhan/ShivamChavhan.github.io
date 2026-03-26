@@ -8,14 +8,18 @@
         body {
             margin: 0;
             font-family: Arial;
-            background: #0f172a;
+            background: linear-gradient(135deg, #0f172a, #020617);
             color: white;
         }
 
+        /* NAVBAR */
         nav {
-            background: #020617;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(10px);
             padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
         }
 
         nav button {
@@ -25,32 +29,60 @@
             margin: 10px;
             font-size: 16px;
             cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: 0.3s;
         }
 
         nav button:hover {
-            color: #38bdf8;
+            background: #38bdf8;
+            color: black;
         }
 
+        nav button.active-btn {
+            background: #38bdf8;
+            color: black;
+        }
+
+        /* SECTIONS */
         section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
             display: none;
             padding: 40px;
             max-width: 900px;
             margin: auto;
         }
 
-        .active {
+        section.active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
+        /* CARDS */
         .card {
-            background: #1e293b;
+            background: rgba(255, 255, 255, 0.05);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
         }
 
         img {
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
         }
     </style>
 </head>
@@ -58,27 +90,25 @@
 <body>
 
 <nav>
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('certificates')">Certificates</button>
-    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="showSection('home', this)" class="active-btn">Home</button>
+    <button onclick="showSection('about', this)">About</button>
+    <button onclick="showSection('projects', this)">Projects</button>
+    <button onclick="showSection('skills', this)">Skills</button>
+    <button onclick="showSection('certificates', this)">Certificates</button>
+    <button onclick="showSection('contact', this)">Contact</button>
 </nav>
 
 <!-- HOME -->
 <section id="home" class="active">
     <h1>Shivam S. Chavhan</h1>
-    <p>B.Tech Electronics & Telecommunication Student</p>
+    <p style="text-align:center;">B.Tech Electronics & Telecommunication Student</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p>
-        I am a first-year Electronics & Telecommunication engineering student with a strong interest in hardware systems and embedded technologies.
-        </p>
+        <p>I am a first-year Electronics & Telecommunication engineering student with a strong interest in hardware systems and embedded technologies.</p>
     </div>
 </section>
 
@@ -101,6 +131,7 @@
         <h3>Li-Fi Communication</h3>
         <p>Transmits data using LED light.</p>
     </div>
+
 </section>
 
 <!-- SKILLS -->
@@ -134,13 +165,20 @@
 </section>
 
 <script>
-function showSection(sectionId) {
+function showSection(sectionId, btn) {
     let sections = document.querySelectorAll("section");
+    let buttons = document.querySelectorAll("nav button");
+
     sections.forEach(section => {
         section.classList.remove("active");
     });
 
+    buttons.forEach(button => {
+        button.classList.remove("active-btn");
+    });
+
     document.getElementById(sectionId).classList.add("active");
+    btn.classList.add("active-btn");
 }
 </script>
 
