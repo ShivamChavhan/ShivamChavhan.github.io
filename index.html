@@ -2,32 +2,65 @@
 <html>
 <head>
     <title>Shivam Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
-            font-family: Arial;
             margin: 0;
+            font-family: Arial, sans-serif;
             background: #0f172a;
             color: white;
+            scroll-behavior: smooth;
         }
+
         header {
             background: #020617;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
             padding: 40px;
             text-align: center;
         }
-        .project {
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
             background: #1e293b;
-            margin: 10px;
-            padding: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        img {
+            width: 100%;
             border-radius: 10px;
         }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #38bdf8;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
         footer {
             background: #020617;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
         }
     </style>
 </head>
@@ -35,38 +68,80 @@
 <body>
 
 <header>
-    <h1>Shivam Chavhan</h1>
-    <p>Engineering Student | Tech Enthusiast</p>
+    <h1>Shivam S. Chavhan</h1>
+    <p>B.Tech Electronics & Telecommunication Student</p>
 </header>
 
 <section>
     <h2>About Me</h2>
-    <p>I am an engineering student interested in electronics, Arduino, and innovative projects like Li-Fi systems.</p>
+    <div class="card">
+        <p>
+        I am a first-year Electronics & Telecommunication engineering student with a strong interest in hardware systems and embedded technologies. I enjoy building practical projects using microcontrollers and exploring real-world applications of IoT and communication systems.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <div class="card">
+        <p>
+        Programming: Python, Java, C <br>
+        Hardware: Arduino, ESP32, Sensors <br>
+        Concepts: IoT, Embedded Systems <br>
+        Soft Skills: Teamwork, Communication
+        </p>
+    </div>
 </section>
 
 <section>
     <h2>Projects</h2>
 
-    <div class="project">
-        <h3>Li-Fi Project</h3>
-        <p>Wireless communication using light technology.</p>
+    <div class="card">
+        <img src="https://via.placeholder.com/800x400">
+        <h3>Water Health Monitoring System (Completed)</h3>
+        <p>
+        Built using ESP32 and IoT. Monitors water quality parameters in real-time and helps in early detection of contamination.
+        </p>
     </div>
 
-    <div class="project">
-        <h3>Piezoelectric Footpath</h3>
-        <p>Generating electricity from footsteps.</p>
+    <div class="card">
+        <img src="https://via.placeholder.com/800x400">
+        <h3>Electricity Generating Footpath (Ongoing)</h3>
+        <p>
+        Generates electricity using piezoelectric sensors from footsteps for sustainable energy.
+        </p>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/800x400">
+        <h3>Li-Fi Communication System (Ongoing)</h3>
+        <p>
+        Uses LED light to transmit audio and text data as an alternative communication method.
+        </p>
     </div>
 
 </section>
 
 <section>
-    <h2>Skills</h2>
-    <p>Java | Arduino | Electronics | Problem Solving</p>
+    <h2>Certificates</h2>
+    <div class="card">
+        <p>
+        MATLAB Onramp – MathWorks (2025)<br>
+        TCS iON Communication Skills – Tata Consultancy Services (2025)<br>
+        Certificate of Participation – Vidyalankar Institute of Technology (2025)
+        </p>
+    </div>
 </section>
 
 <section>
     <h2>Contact</h2>
-    <p>Email: your-email@gmail.com</p>
+    <div class="card">
+        <p>
+        Email: your-email@gmail.com <br>
+        GitHub: <a href="#">Your GitHub</a><br>
+        LinkedIn: <a href="#">Your LinkedIn</a>
+        </p>
+    </div>
 </section>
 
 <footer>
