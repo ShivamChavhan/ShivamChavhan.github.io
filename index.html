@@ -7,146 +7,142 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial;
             background: #0f172a;
             color: white;
-            scroll-behavior: smooth;
         }
 
-        header {
+        nav {
             background: #020617;
-            padding: 40px;
+            padding: 15px;
             text-align: center;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 32px;
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            color: #38bdf8;
         }
 
         section {
-            padding: 40px 20px;
-            max-width: 1000px;
+            display: none;
+            padding: 40px;
+            max-width: 900px;
             margin: auto;
+        }
+
+        .active {
+            display: block;
         }
 
         .card {
             background: #1e293b;
             padding: 20px;
-            margin: 20px 0;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
+            border-radius: 10px;
         }
 
         img {
             width: 100%;
             border-radius: 10px;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #38bdf8;
-            color: black;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-
-        footer {
-            background: #020617;
-            text-align: center;
-            padding: 20px;
-        }
     </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('certificates')">Certificates</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
     <h1>Shivam S. Chavhan</h1>
     <p>B.Tech Electronics & Telecommunication Student</p>
-</header>
+</section>
 
-<section>
+<!-- ABOUT -->
+<section id="about">
     <h2>About Me</h2>
     <div class="card">
         <p>
-        I am a first-year Electronics & Telecommunication engineering student with a strong interest in hardware systems and embedded technologies. I enjoy building practical projects using microcontrollers and exploring real-world applications of IoT and communication systems.
+        I am a first-year Electronics & Telecommunication engineering student with a strong interest in hardware systems and embedded technologies.
         </p>
     </div>
 </section>
 
-<section>
-    <h2>Skills</h2>
-    <div class="card">
-        <p>
-        Programming: Python, Java, C <br>
-        Hardware: Arduino, ESP32, Sensors <br>
-        Concepts: IoT, Embedded Systems <br>
-        Soft Skills: Teamwork, Communication
-        </p>
-    </div>
-</section>
-
-<section>
+<!-- PROJECTS -->
+<section id="projects">
     <h2>Projects</h2>
 
     <div class="card">
-        <img src="https://via.placeholder.com/800x400">
-        <h3>Water Health Monitoring System (Completed)</h3>
-        <p>
-        Built using ESP32 and IoT. Monitors water quality parameters in real-time and helps in early detection of contamination.
-        </p>
+        <img src="YOUR_IMAGE_1.jpg">
+        <h3>Water Monitoring System</h3>
+        <p>Built using ESP32 and IoT for real-time monitoring.</p>
     </div>
 
     <div class="card">
-        <img src="https://via.placeholder.com/800x400">
-        <h3>Electricity Generating Footpath (Ongoing)</h3>
-        <p>
-        Generates electricity using piezoelectric sensors from footsteps for sustainable energy.
-        </p>
+        <h3>Electricity Generating Footpath</h3>
+        <p>Uses piezoelectric sensors to generate electricity.</p>
     </div>
 
     <div class="card">
-        <img src="https://via.placeholder.com/800x400">
-        <h3>Li-Fi Communication System (Ongoing)</h3>
-        <p>
-        Uses LED light to transmit audio and text data as an alternative communication method.
-        </p>
+        <h3>Li-Fi Communication</h3>
+        <p>Transmits data using LED light.</p>
     </div>
-
 </section>
 
-<section>
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+        Programming: Python, Java, C <br>
+        Hardware: Arduino, ESP32 <br>
+        IoT & Embedded Systems
+    </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
     <h2>Certificates</h2>
     <div class="card">
-        <p>
-        MATLAB Onramp – MathWorks (2025)<br>
-        TCS iON Communication Skills – Tata Consultancy Services (2025)<br>
-        Certificate of Participation – Vidyalankar Institute of Technology (2025)
-        </p>
+        MATLAB Onramp – MathWorks <br>
+        TCS iON Communication – TCS <br>
+        Participation Certificate – VIT
     </div>
 </section>
 
-<section>
+<!-- CONTACT -->
+<section id="contact">
     <h2>Contact</h2>
     <div class="card">
-        <p>
         Email: your-email@gmail.com <br>
-        GitHub: <a href="#">Your GitHub</a><br>
-        LinkedIn: <a href="#">Your LinkedIn</a>
-        </p>
+        GitHub: your-link <br>
+        LinkedIn: your-link
     </div>
 </section>
 
-<footer>
-    <p>© 2026 Shivam</p>
-</footer>
+<script>
+function showSection(sectionId) {
+    let sections = document.querySelectorAll("section");
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+}
+</script>
 
 </body>
 </html>
