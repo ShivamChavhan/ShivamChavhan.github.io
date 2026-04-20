@@ -476,8 +476,8 @@
     ══════════════════════════════════ */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr));
+      gap: 24px;
     }
     .cert-card {
       border: 1px solid var(--line);
@@ -490,7 +490,7 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(28, 26, 24, 0.08);
     }
-    .cert-img { aspect-ratio: 4/3; background: var(--accent-lt); overflow: hidden; }
+    .cert-img { height: 180px; background: var(--accent-lt); overflow: hidden; }
     /*
      * ╔════════════════════════════════════════════╗
      * ║  CERTIFICATE IMAGE PLACEHOLDERS           ║
